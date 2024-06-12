@@ -130,14 +130,38 @@ html, body {
     padding: 0px 10px 15px 20px;
 }
 
-#searchresultsarea {
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+#searchresultarea{
     margin-left: 150px;
     font-family: 'Arial';
+    flex: 0 0 55%;
 }
 
+.right {
+    flex: 0 0 30%; /* 35% width */
+}
+.rightbox{
+    border: #4285F4;
+}
+
+@media screen and (max-width: 1300px) {
+    #searchresultarea, .right {
+        flex: 0 0 100%; /* 100% width */
+    }
+
+    .right {
+        order: -1;
+        margin-left: 150px;
+    }
+}
 #searchresultsnumber {
     font-size: 0.8rem;
     color: gray;
+    margin-left: 150px;
+    font-family: 'Arial'
 }
 
 .searchresult {
@@ -145,8 +169,8 @@ html, body {
 }
 
 .searchresult h2 {
-    font-size: 19px;
-    line-height: 18px;
+    font-size: 1.3rem;
+    line-height: 1.2rem;
     font-weight: normal;
     color: rgb(29, 1, 189);
     margin-bottom: 0px;
@@ -154,11 +178,16 @@ html, body {
 }
 
 .searchresult a {
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 1.0rem;
+    line-height: 0.7rem;
     color: green;
     margin-bottom: 0px;
+    text-decoration: none; 
 }
+.searchresult a :hover {
+    text-decoration: underline;  /* Adds underline on hover */
+}
+
 
 .searchresult button {
     font-size: 10px;
@@ -241,125 +270,14 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 300px;
+    width: 350px;
 }
-
+.relatedleft{
+    margin-left: 5px;
+}
 .relatedlists ul li {
     margin-bottom: 8px;
 }
-
-.pagelist {
-    list-style: none;
-    color: rgb(29, 135, 255);
-    display: flex;
-    flex-direction: row;
-    font-size: 12px;
-    margin-bottom: 30px;
-    margin-left: 100px;
-}
-
-.pagelistprevious::before {
-    content: '<';
-    display: block;
-    position: absolute;
-    right: 12px;
-    top: -35px;
-    color: rgb(29, 135, 255);
-    font-size: 20px;
-    transform: scale(0.7, 1.2);
-}
-
-.pagelistprevious::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: -40px;
-    top: -35px;
-    width: 40px;
-    height: 40px;
-    background-image: url('images/g.png');
-    background-repeat: no-repeat;
-    background-size: 28px;
-}
-
-.pagelistfirst {
-    margin-left: 20px;
-    font-size: 13px;
-}
-
-.pagelistnumber::before, .pagelistfirst::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: -2px;
-    top: -21px;
-    border-radius: 50px;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    z-index: 3;
-}
-
-.pagelistnumber::after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: -6px;
-    top: -25px;
-    border-radius: 50px;
-    width: 18px;
-    height: 18px;
-    background-color: rgb(255, 196, 0);
-    z-index: 2;
-}
-
-.pagelistfirst::after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: -6px;
-    top: -25px;
-    border-radius: 50px;
-    width: 18px;
-    height: 18px;
-    background-color: red;
-    z-index: 2;
-}
-
-.pagelist li {
-    margin-right: 15px;
-    position: relative;
-}
-
-.pagelistnext {
-    margin-left: 40px;
-    font-size: 13px;
-}
-
-.pagelistnext::before {
-    content: '>';
-    display: block;
-    position: absolute;
-    left: 5px;
-    top: -35px;
-    color: rgb(29, 135, 255);
-    font-size: 20px;
-    transform: scale(0.7, 1.2);
-}
-
-.pagelistnext::after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: -55px;
-    top: -37px;
-    width: 50px;
-    height: 50px;
-    background-image: url('images/gle.png');
-    background-repeat: no-repeat;
-    background-size: 48px;
-}
-
 
 #footer {
     background-color: rgb(238, 238, 238);
@@ -396,17 +314,4 @@ html, body {
 
 #footerlocation p:nth-of-type(1) {
     font-weight: bold;
-}
-/* Add styles for the right side box */
-#rightsidebox {
-    position: fixed;
-    right: 20px;
-    top: 150px;
-    width: 300px;
-    height: 400px;
-    border: 1px solid lightgray;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 50;
 }
