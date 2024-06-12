@@ -8,7 +8,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #FFFAFA;
+    background-color: #fafafa;
     /* background-image: url('assets/bgimg.jpg'); */
     background-size: cover;
     background-position: center;
@@ -34,6 +34,14 @@ body {
 #google_image {
     height: 130px;
     margin-bottom: 60px;
+    transition: height 0.6s ease;
+}
+
+@media screen and (max-width: 768px) {
+    #google_image {
+        height: 80px;
+        transition: height 0.6s ease; 
+    }
 }
 
 .header-container {
@@ -86,7 +94,7 @@ main {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 40vw;
+    width:50%;
     background-color: white;
     margin-top: -20px;
     margin-bottom: 30px;
@@ -94,6 +102,18 @@ main {
     padding: 5px 10px;
     height: 37px;
     box-shadow: 0 6px 5px rgba(144, 143, 143, 0.3);
+    transition: width 0.6s ease;
+}
+
+@media screen and (max-width: 508px) {
+    .search-input-section {
+        width: 80%;
+        transition: width 0.6s ease; 
+    }
+    .search-input-container .search-input{
+        font-size:medium;
+        transition: width 0.6s ease;
+    }
 }
 
 .mic-icon {
@@ -102,8 +122,9 @@ main {
 
 .search-input {
     border: none;
-    font-size: 20px;
+    font-size: large;
     width: 100%;
+    transition: width 0.6s ease;
 }
 
 .search-input:focus {
@@ -146,17 +167,6 @@ main {
     border-radius: 5px;
 }
 
-.customize_size {
-    position: absolute;
-    top: 93vh;
-    left: 87vw;
-    background-color: rgb(191, 212, 250);
-    padding: 10px;
-    border-radius: 30px;
-    color: black;
-    font-size: 13px;
-}
-
 i {
     margin-right: 2px;
 }
@@ -166,3 +176,5 @@ i {
     opacity: 0.5;
     margin-top: 2px;
 }
+
+
